@@ -1,0 +1,48 @@
+@import "variables";
+@import "responsive";
+@import "aside";
+@import "main";
+@import "playing";
+@import "loader";
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $black-color;
+  color: $text-color;
+  font-family: "Exo 2";
+  height: 100vh;
+  overflow: hidden;
+  padding: 16px;
+  @include md {
+    padding: 15px;
+  }
+  /*! İlk div anlamına geliyor. */
+  // & > div
+  .layout {
+    display: flex;
+    gap: 16px;
+    height: calc(100vh - 120px);
+    @include md {
+      gap: 10px;
+    }
+  }
+}
+a {
+  text-decoration: none;
+  color: $text-color;
+  white-space: nowrap;
+  border-radius: 10px;
+  transition: all 0.5s;
+  padding: 10px;
+}
+button {
+  border: none;
+  background: none;
+  color: $text-color;
+  cursor: pointer;
+}

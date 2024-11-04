@@ -1,0 +1,378 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+aside {
+  background: #282828;
+  padding: 20px;
+  border-radius: 12px;
+  height: 100%;
+}
+aside figure {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+aside figure img {
+  width: 40px;
+}
+aside figure span {
+  font-size: 25px;
+  font-weight: bold;
+}
+@media (max-width: 992px) {
+  aside figure span {
+    display: none;
+  }
+}
+aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+}
+aside nav a {
+  border-radius: 10px;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  aside nav a span {
+    display: none;
+  }
+}
+aside nav a:hover {
+  background: #1db954;
+  color: #121212;
+}
+@media (max-width: 992px) {
+  aside nav a i {
+    font-size: 18px;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #282828;
+  width: 100%;
+  gap: 16px;
+  border-radius: 12px;
+  padding: 16px;
+}
+main header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #121212;
+  border-radius: 12px;
+  padding: 15px;
+  gap: 15px;
+}
+main header form {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.221);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 550px;
+}
+@media (max-width: 768px) {
+  main header form {
+    max-width: none;
+  }
+}
+main header form input {
+  font-size: 100%;
+  border-radius: 12px;
+  padding: 10px;
+  text-indent: 5px;
+  background: #121212;
+  outline: none;
+  border: none;
+  width: 100%;
+  color: #fff;
+}
+main header form button {
+  font-size: 22px;
+  margin-right: 7px;
+}
+main header nav {
+  display: flex;
+  gap: 16px;
+}
+main header nav span {
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.5s;
+}
+@media (max-width: 670px) {
+  main header nav span {
+    display: none;
+  }
+}
+main header nav span:hover {
+  color: white;
+}
+main section {
+  flex: 1;
+  overflow-y: auto;
+}
+main .list {
+  margin-top: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  main .list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+main .card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #121212;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-top: 15px;
+  width: auto;
+  height: 100%;
+}
+main .card:hover .play {
+  bottom: 10px;
+  opacity: 1;
+}
+main .card figure {
+  position: relative;
+}
+main .card figure img {
+  width: 100%;
+  border-radius: 10px;
+}
+main .card .music-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .card .music-info h5 {
+  margin-top: 10px;
+}
+main .card .play {
+  background: #1db954;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  transition: all 0.5s;
+  opacity: 0;
+}
+main .card .play:hover {
+  scale: 1.13;
+  background: #159845;
+}
+main .card .play i {
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.player .info {
+  display: flex;
+  gap: 5px;
+}
+.player .info .player-title h5 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.player .info .player-title h4 {
+  font-size: 14px;
+  color: gray;
+}
+.player img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.player audio {
+  width: 40%;
+}
+.player .icons {
+  display: flex;
+  gap: 12px;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .player .icons {
+    display: none;
+  }
+}
+
+.animate {
+  animation: turn 5s infinite linear;
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  display: grid;
+  place-items: center;
+  height: 80%;
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 80px;
+  background-color: #282828;
+  border-radius: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.album-cover {
+  width: 64px;
+  height: 64px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.player-controls {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.song-info {
+  margin-bottom: 4px;
+}
+
+.song-title {
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
+}
+
+.artist {
+  font-size: 12px;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #4f4f4f;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 50%;
+  height: 100%;
+  background-color: #1db954;
+  transform-origin: left;
+  animation: progress-animation 10s linear infinite;
+}
+
+.buttons {
+  display: flex;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.play-btn,
+.pause-btn {
+  font-size: 16px;
+  color: #fff;
+  margin-right: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.play-btn:hover,
+.pause-btn:hover {
+  transform: scale(1.2);
+}
+
+@keyframes progress-animation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121212;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "Exo 2";
+  height: 100vh;
+  overflow: hidden;
+  padding: 16px;
+  /*! İlk div anlamına geliyor. */
+}
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+}
+body .layout {
+  display: flex;
+  gap: 16px;
+  height: calc(100vh - 120px);
+}
+@media (max-width: 768px) {
+  body .layout {
+    gap: 10px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.78);
+  white-space: nowrap;
+  border-radius: 10px;
+  transition: all 0.5s;
+  padding: 10px;
+}
+
+button {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
