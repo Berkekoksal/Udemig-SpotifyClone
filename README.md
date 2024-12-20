@@ -2,7 +2,7 @@
 
 # Spotify Clone
 
-![Spotify Clone](./images/preview.png)
+![](spotify-clone.gif)
 
 ## Project Overview
 

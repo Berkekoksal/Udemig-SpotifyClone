@@ -1,6 +1,6 @@
 //* API URL
 const url =
-  "https://shazam.p.rapidapi.com/search?term=the%20weekend&locale=en-US&offset=0&limit=10";
+  "https://shazam.p.rapidapi.com/search?term=the%20weekend&locale=en-US&offset=0&limit=5";
 //* API options gönderilmesi gereken header'lar
 const options = {
   method: "GET",
@@ -13,8 +13,7 @@ export default class API {
   async getPopular() {
     const data1 = await this.searchMusic("the weekend");
     const data2 = await this.searchMusic("mero");
-    const data3 = await this.searchMusic("hippie sabotage");
-    return [...data1, ...data2, ...data3];
+    return [...data1, ...data2];
 
     /* const res = await fetch(url, options);
     const data = await res.json();
